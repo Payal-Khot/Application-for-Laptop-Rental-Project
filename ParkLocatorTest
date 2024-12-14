@@ -1,0 +1,20 @@
+@isTest
+public class ParkLocatorTest {
+    @isTest
+    static void testCallout() {
+        // Mock setup
+        Test.setMock(WebServiceMock.class, new ParkServiceMock());
+
+        // Input
+        String country = 'United States';
+
+        // Method call
+        List<String> result = ParkLocator.country(country);
+
+        // Expected result
+        List<String> parks = new List<String>{'Yellowstone', 'Mackinac National Park', 'Yosemite'};
+
+        // Assertion
+        System.assertEquals(parks, result);
+    }
+}
