@@ -1,0 +1,9 @@
+public class ParkLocator {
+    public static String[] country(String theCountry) {
+        // Ensure ParksImplPort is properly initialized
+        ParkService.ParksImplPort parkSvc = new ParkService.ParksImplPort();
+        
+        // Call the web service
+        return parkSvc.byCountry(theCountry);
+    }
+}
